@@ -1,0 +1,113 @@
+$mrfp-blue: #3B4E64;
+$mrfp-l-blue: #BBC3D1;
+$mrfp-green: #00C5AC;
+$mrfp-l-green: #EBFBF9;
+$mrfp-yellow: #ECC600;
+$mrfp-l-yellow: #FDFBED;
+$mrfp-orange: #F16246;
+$mrfp-l-orange: #FFF1ED;
+$mrfp-purple: #AD6DC4;
+$mrfp-l-purple: #F6EFF9;
+
+$mrfp-l-orange-shade-1: #ffd6cc;
+
+.b-top-section {
+    &.m-dark-blue {
+        background-color: $mrfp-blue;
+        color: $mrfp-l-blue;
+    }
+}
+
+.b-page-section {
+    &.m-orange {
+        background-color: $mrfp-l-orange;
+        color: $mrfp-blue;
+    }
+    &.m-purple {
+        background-color: $mrfp-l-purple;
+        color: $mrfp-blue;
+    }
+    &.m-extra-padding { padding: 80px 0; }
+}
+
+.b-slide {
+ &.m-blue { background-color: $mrfp-blue; }
+   // &.m-green { background-color: $mrfp-green; }
+   // &.m-yellow { background-color: $mrfp-yellow; }
+   &.m-orange { background-color: $mrfp-orange; }
+   &.m-purple { background-color: $mrfp-purple; }
+}
+
+.b-divider {
+    &.m-centered {
+        text-align: center;
+    }
+    &.m-no-padding {
+        padding: 0;
+        .row {
+            margin: 0;
+            max-width: 100vw;
+        }
+        .columns {
+            padding: 0;
+        }
+    }
+    &.m-purple {
+        background-color: $mrfp-purple;
+        color: $mrfp-l-purple;
+    }
+}
+
+.b-button {
+    &.m-block {
+        display: block;
+        height: 100%;
+        margin-left: 0;
+    }
+}
+
+.b-circle {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: $mrfp-l-orange-shade-1;
+    border-radius: 100%;
+    .b-page-graphic {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10%;
+        fill: $mrfp-l-orange;
+        height: 80%;
+    }
+}
+
+.row .columns {
+    &.m-centered { text-align: center; }
+    &.m-v-centered {
+        position: relative;
+        min-height: 200px;
+        & > p {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &.m-orange { background-color: $mrfp-orange; }
+    &.m-green { background-color: $mrfp-green; }
+    &.m-purple { background-color: $mrfp-purple; }
+    &.m-yellow { background-color: $mrfp-yellow; }
+}
+
+.b-top-nav {
+    &.m-transparent {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+    }
+}
+
+#overlay {
+    background-color: transparent;
+}
