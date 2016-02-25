@@ -62,6 +62,11 @@ gulp.task('nunjucks', function() {
   }))
 });
 
+gulp.task('deploy', ['sass', 'nunjucks', 'js', 'img'], shell.task([
+  'git subtree push --prefix public origin gh-pages'
+  ])
+);
+
 gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img'], function (){
   gulp.watch('source/sass/**/*.scss', ['sass']);
   gulp.watch('source/templates/**/*.html', ['nunjucks']);
