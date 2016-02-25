@@ -6905,6 +6905,9 @@ code.m-negative {
   .sandbox {
     background-color: blue; } }
 
+.b-top-section a.m-no-decoration:hover {
+  text-decoration: none; }
+
 .b-top-section.m-dark-blue {
   background-color: #3B4E64;
   color: #BBC3D1; }
@@ -6915,6 +6918,14 @@ code.m-negative {
 
 .b-page-section.m-purple {
   background-color: #F6EFF9;
+  color: #3B4E64; }
+
+.b-page-section.m-green {
+  background-color: #EBFBF9;
+  color: #3B4E64; }
+
+.b-page-section.m-yellow {
+  background-color: #FDFBED;
   color: #3B4E64; }
 
 .b-page-section.m-extra-padding {
@@ -6962,27 +6973,52 @@ code.m-negative {
     fill: #FFF1ED;
     height: 80%; }
 
-.row .columns.m-centered {
+.row.m-centered, .columns.m-centered {
   text-align: center; }
 
-.row .columns.m-v-centered {
+.row.m-v-centered, .columns.m-v-centered {
   position: relative;
   min-height: 200px; }
-  .row .columns.m-v-centered > p {
+  .row.m-v-centered > p, .columns.m-v-centered > p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
 
-.row .columns.m-orange {
+.row.m-text-large p, .columns.m-text-large p {
+  font-size: 18px;
+  line-height: 1.9;
+  padding-bottom: 40px; }
+  .row.m-text-large p.m-small, .columns.m-text-large p.m-small {
+    font-size: 14px;
+    line-height: 1.4; }
+  .row.m-text-large p.m-centered, .columns.m-text-large p.m-centered {
+    text-align: center; }
+  .row.m-text-large p.m-no-padding, .columns.m-text-large p.m-no-padding {
+    padding-bottom: 0; }
+
+.row.m-text-large h2, .columns.m-text-large h2 {
+  padding-bottom: 40px; }
+
+.row.m-text-large ul, .columns.m-text-large ul {
+  padding: 20px 40px; }
+  .row.m-text-large ul li, .columns.m-text-large ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.7; }
+
+.row.m-extra-padding, .columns.m-extra-padding {
+  padding: 40px 0; }
+
+.row.m-orange, .columns.m-orange {
   background-color: #F16246; }
 
-.row .columns.m-green {
+.row.m-green, .columns.m-green {
   background-color: #00C5AC; }
 
-.row .columns.m-purple {
+.row.m-purple, .columns.m-purple {
   background-color: #AD6DC4; }
 
-.row .columns.m-yellow {
+.row.m-yellow, .columns.m-yellow {
   background-color: #ECC600; }
 
 .b-top-nav.m-transparent {
@@ -6990,6 +7026,13 @@ code.m-negative {
   position: absolute;
   top: 0;
   width: 100vw; }
+
+ul.b-contact {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.5); }
+  ul.b-contact li:first-of-type {
+    color: #333;
+    font-weight: 600; }
 
 #overlay {
   background-color: transparent; }
