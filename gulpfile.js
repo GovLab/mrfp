@@ -34,7 +34,7 @@ gulp.task('img', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src('node_modules/govlab-styleguide/js/**/*')
+  return gulp.src(['node_modules/govlab-styleguide/js/**/*', 'source/js/**/*'])
   .pipe(plumber())
   .pipe(gulp.dest('public/js'))
   .pipe(browserSync.stream());
@@ -71,4 +71,5 @@ gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img'], function 
   gulp.watch('source/sass/**/*.scss', ['sass']);
   gulp.watch('source/templates/**/*.html', ['nunjucks']);
   gulp.watch('source/img/**/*', ['img']);
+  gulp.watch('source/js/**/*', ['js']);
 });

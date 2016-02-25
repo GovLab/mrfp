@@ -69,11 +69,15 @@ $mrfp-l-orange-shade-1: #ffd6cc;
     }
 }
 
-.b-button {
-    &.m-block {
-        display: block;
-        height: 100%;
-        margin-left: 0;
+.b-top-menu {
+    .b-button {
+        &.m-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-left: 0;
+        }
     }
 }
 
