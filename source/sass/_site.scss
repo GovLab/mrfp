@@ -12,6 +12,9 @@ $mrfp-l-purple: #F6EFF9;
 $mrfp-l-orange-shade-1: #ffd6cc;
 
 .b-top-section {
+    a.m-no-decoration {
+        &:hover { text-decoration: none; }
+    }
     &.m-dark-blue {
         background-color: $mrfp-blue;
         color: $mrfp-l-blue;
@@ -25,6 +28,14 @@ $mrfp-l-orange-shade-1: #ffd6cc;
     }
     &.m-purple {
         background-color: $mrfp-l-purple;
+        color: $mrfp-blue;
+    }
+    &.m-green {
+        background-color: $mrfp-l-green;
+        color: $mrfp-blue;
+    }
+    &.m-yellow {
+        background-color: $mrfp-l-yellow;
         color: $mrfp-blue;
     }
     &.m-extra-padding { padding: 80px 0; }
@@ -66,10 +77,12 @@ $mrfp-l-orange-shade-1: #ffd6cc;
     }
 }
 
+$graphic-size: 200px;
+
 .b-circle {
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: $graphic-size;
+    height: $graphic-size;
     background-color: $mrfp-l-orange-shade-1;
     border-radius: 100%;
     .b-page-graphic {
@@ -81,16 +94,49 @@ $mrfp-l-orange-shade-1: #ffd6cc;
     }
 }
 
-.row .columns {
+.row, .columns {
     &.m-centered { text-align: center; }
     &.m-v-centered {
         position: relative;
-        min-height: 200px;
+        min-height: $graphic-size;
         & > p {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
+    }
+
+    &.m-text-large {
+        p {
+            font-size: 18px;
+            line-height: 1.9;
+            padding-bottom: 40px;
+            &.m-small {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            &.m-centered {
+                text-align: center;
+            }
+            &.m-no-padding {
+                padding-bottom: 0;
+            }
+        }
+        h2 {
+            padding-bottom: 40px;
+        }
+        ul {
+            padding: 20px 40px;
+            li {
+                margin-bottom: 10px;
+                font-size: 18px;
+                line-height: 1.7;
+            }
+        }
+    }
+
+    &.m-extra-padding {
+        padding: 40px 0;
     }
 
     &.m-orange { background-color: $mrfp-orange; }
@@ -105,6 +151,15 @@ $mrfp-l-orange-shade-1: #ffd6cc;
         position: absolute;
         top: 0;
         width: 100vw;
+    }
+}
+
+ul.b-contact {
+    list-style: none;
+    color: $gray-50;
+    li:first-of-type {
+        color: $black;
+        font-weight: 600;
     }
 }
 
