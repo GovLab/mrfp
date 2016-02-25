@@ -6955,8 +6955,10 @@ code.m-negative {
   background-color: #AD6DC4;
   color: #F6EFF9; }
 
-.b-button.m-block, .b-form input.m-block[type="submit"] {
-  display: block;
+.b-top-menu .b-button.m-block, .b-top-menu .b-form input.m-block[type="submit"], .b-form .b-top-menu input.m-block[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   margin-left: 0; }
 
