@@ -6,3 +6,14 @@
 // }).success( function(response){
 //     console.log(JSON.stringify(response));
 // });
+
+$(function() {
+
+    $( '.m-collapsible' ).append( '<a class="b-button m-more"></a>' );
+
+    $( '.m-more' ).click(function () {
+        console.log('collapse clicked');
+        $(this).parent().toggleClass('m-collapsed');
+    });
+
+});

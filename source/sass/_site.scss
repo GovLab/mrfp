@@ -1,5 +1,6 @@
 $mrfp-blue: #3B4E64;
 $mrfp-l-blue: #BBC3D1;
+$mrfp-ex-l-blue: #e1e5ea;
 $mrfp-green: #00C5AC;
 $mrfp-l-green: #EBFBF9;
 $mrfp-yellow: #ECC600;
@@ -11,6 +12,23 @@ $mrfp-l-purple: #F6EFF9;
 
 $mrfp-l-orange-shade-1: #ffd6cc;
 
+.b-top-nav {
+    &.m-transparent {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+    }
+    .e-logo {
+        padding-top: 8px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        @include breakpoint($desktop) { display: block; }
+        @include breakpoint($mobile-only) { display: none; }
+    }
+}
+
 .b-top-section {
     a.m-no-decoration {
         &:hover { text-decoration: none; }
@@ -18,6 +36,22 @@ $mrfp-l-orange-shade-1: #ffd6cc;
     &.m-dark-blue {
         background-color: $mrfp-blue;
         color: $mrfp-l-blue;
+    }
+    h1, h2, h3, h4 {
+        font-family: 'Raleway', sans-serif;
+    }
+    h1 {
+        max-width: 40rem;
+        margin: 0 auto;
+        font-weight: 300;
+        margin-bottom: 20px;
+        @include breakpoint($desktop) { font-size: 45px; }
+        @include breakpoint($mobile-only) { font-size: 40px; }
+    }
+    h3 {
+
+        @include breakpoint($desktop) { font-size: 30px; }
+        @include breakpoint($mobile-only) { font-size: 22px; }
     }
 }
 
@@ -38,15 +72,25 @@ $mrfp-l-orange-shade-1: #ffd6cc;
         background-color: $mrfp-l-yellow;
         color: $mrfp-blue;
     }
-    &.m-extra-padding { padding: 80px 0; }
+    &.m-blue {
+        background-color: $mrfp-ex-l-blue;
+        color: $mrfp-blue;
+    }
+    &.m-extra-padding {
+        padding: 80px 0;
+        & > .row:not(:last-child) {
+            margin-bottom: 90px;
+        }
+        & > .row.m-sm-bot {
+            margin-bottom: 10px;
+        }
+    }
 }
 
 .b-slide {
  &.m-blue { background-color: $mrfp-blue; }
-   // &.m-green { background-color: $mrfp-green; }
-   // &.m-yellow { background-color: $mrfp-yellow; }
-   &.m-orange { background-color: $mrfp-orange; }
-   &.m-purple { background-color: $mrfp-purple; }
+ &.m-orange { background-color: $mrfp-orange; }
+ &.m-purple { background-color: $mrfp-purple; }
 }
 
 .b-divider {
@@ -70,15 +114,29 @@ $mrfp-l-orange-shade-1: #ffd6cc;
 }
 
 .b-top-menu {
-    .b-button {
-        &.m-block {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            margin-left: 0;
+    .b-menu-buttons {
+        .b-button {
+            &.m-block {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                margin-left: 0;
+            }
+            &:hover {
+                // background-color: $white-40;
+            }
         }
     }
+}
+
+.b-pagination-indicator {
+    height: 4px;
+    background-color: $mrfp-ex-l-blue;
+    &.m-orange { background-color: $mrfp-orange; }
+    &.m-green { background-color: $mrfp-green; }
+    &.m-purple { background-color: $mrfp-purple; }
+    &.m-yellow { background-color: $mrfp-yellow; }
 }
 
 $graphic-size: 200px;
@@ -98,6 +156,23 @@ $graphic-size: 200px;
     }
 }
 
+.b-page-graphic {
+    display: block;
+    margin: 0 auto;
+
+    @include breakpoint($desktop) {
+        margin-top: 10%;
+        height: 80%;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    @include breakpoint($mobile-only) {
+        height: 100%;
+        width: 80%;
+        margin-bottom: 80px;
+    }
+}
+
 .row, .columns {
     &.m-centered { text-align: center; }
     &.m-v-centered {
@@ -114,7 +189,7 @@ $graphic-size: 200px;
         p {
             font-size: 18px;
             line-height: 1.9;
-            padding-bottom: 40px;
+            padding-bottom: 20px;
             &.m-small {
                 font-size: 14px;
                 line-height: 1.4;
@@ -124,15 +199,14 @@ $graphic-size: 200px;
             }
             &.m-no-padding {
                 padding-bottom: 0;
+                margin-bottom: 0;
             }
         }
         h2 {
             padding-bottom: 40px;
         }
         ul {
-            padding: 20px 40px;
             li {
-                margin-bottom: 10px;
                 font-size: 18px;
                 line-height: 1.7;
             }
@@ -143,27 +217,59 @@ $graphic-size: 200px;
         padding: 40px 0;
     }
 
+    &.m-side-heading {
+        @include breakpoint($desktop) { text-align: right; }
+        @include breakpoint($mobile-only) { text-align: left; }
+        h1 {
+            text-rendering: auto;
+            display: inline;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 30px;
+        }
+        padding-bottom: 20px;
+    }
+
+    &.m-collapsible {
+        &.m-collapsed > *:not(:first-child):not(.m-show):not(.m-more) {
+            display: none;
+        }
+        &.m-collapsed > .m-more {
+            display: inline;
+            &::after {
+                content: 'Read More'
+            }
+        }
+        & > .m-more {
+            display: inline;
+            &::after {
+                content: 'Read Less'
+            }
+        }
+    }
+
     &.m-orange { background-color: $mrfp-orange; }
     &.m-green { background-color: $mrfp-green; }
     &.m-purple { background-color: $mrfp-purple; }
     &.m-yellow { background-color: $mrfp-yellow; }
 }
 
-.b-top-nav {
-    &.m-transparent {
-        background-color: transparent;
-        position: absolute;
-        top: 0;
-        width: 100vw;
-    }
-}
 
-ul.b-contact {
-    list-style: none;
-    color: $gray-50;
-    li:first-of-type {
-        color: $black;
-        font-weight: 600;
+ul {
+    padding: 20px 40px;
+    &.b-contact {
+        list-style: none;
+        color: $gray-50;
+        li:first-of-type {
+            color: $black;
+            font-weight: 600;
+        }
+    }
+    &.e-requirements-list {
+        margin-left: 0;
+        li {
+            margin-bottom: 30px;
+        }
     }
 }
 
