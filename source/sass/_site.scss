@@ -12,6 +12,13 @@ $mrfp-l-purple: #F6EFF9;
 
 $mrfp-l-orange-shade-1: #ffd6cc;
 
+$mrfp-orange-accent: #ffad66;
+
+$mrfp-timeline-1: #ecb100;
+$mrfp-timeline-2: #ec9d00;
+$mrfp-timeline-3: #ec8a00;
+$mrfp-timeline-4: #ec7600;
+
 .b-top-nav {
     &.m-transparent {
         background-color: transparent;
@@ -88,9 +95,9 @@ $mrfp-l-orange-shade-1: #ffd6cc;
 }
 
 .b-slide {
- &.m-blue { background-color: $mrfp-blue; }
- &.m-orange { background-color: $mrfp-orange; }
- &.m-purple { background-color: $mrfp-purple; }
+   &.m-blue { background-color: $mrfp-blue; }
+   &.m-orange { background-color: $mrfp-orange; }
+   &.m-purple { background-color: $mrfp-purple; }
 }
 
 .b-divider {
@@ -256,7 +263,14 @@ $graphic-size: 200px;
 
 
 ul {
-    padding: 20px 40px;
+    &.b-states {
+        list-style: none;
+        color: $gray-50;
+        font-weight: 600;
+        float: left;
+        width: 12rem;
+        margin: 0;
+    }
     &.b-contact {
         list-style: none;
         color: $gray-50;
@@ -266,9 +280,137 @@ ul {
         }
     }
     &.e-requirements-list {
+        padding: 20px 40px;
         margin-left: 0;
         li {
             margin-bottom: 30px;
+        }
+    }
+}
+
+.b-state-box-outer {
+    text-align: center;
+    .b-state-box {
+        text-align: left;
+        display: inline-block;
+        &::after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+    }
+}
+
+.b-us-map {
+    width: 100%;
+    margin-bottom: 40px;
+    .state
+    {
+        fill:#E0E0E0;
+        stroke: $mrfp-l-orange;
+        stroke-width:2;
+        stroke-opacity:1;
+    }
+
+    .territory
+    {
+        opacity:0;
+        fill:#E0E0E0;
+        stroke:#646464;
+        stroke-width:1;
+        stroke-opacity:1;
+    }
+
+    .territoryborder
+    {
+        opacity:0;
+        fill:none;
+        stroke:#A9A9A9;
+        stroke-width:2;
+    }
+
+    .border
+    {
+        opacity:1;
+        fill:none;
+        stroke:#A9A9A9;
+        stroke-width:2;
+    }
+
+    .circle
+    {
+        opacity:1;
+        fill:#E0E0E0;
+        stroke:#646464;
+        stroke-width:1;
+    }
+    .m-pilot {
+        fill: $mrfp-orange-accent;
+    }
+}
+
+time {
+    font-weight: 600;
+}
+
+$diagonal-size: 17px;
+
+.b-timeline {
+    display: block;
+    padding-left: 5px;
+    margin-bottom: 40px;
+    .e-event {
+        display: relative;
+        margin-left: -5px;
+        display: inline-block;
+        border: solid 2px green;
+        width: 20%;
+        vertical-align: top;
+        .e-description {
+            border: solid 2px red;
+            display: block;
+        }
+        time {
+            display: block;
+            border: solid 2px blue;
+        }
+
+    }
+    .e-timeline-graphic {
+        background-color: #E0E0E0;
+        margin-left: -5px;
+        padding-left: 5px;
+        .e-timebox {
+            height: 40px;
+            padding: 0;
+            display: inline-block;
+            width: 20%;
+            margin-left: -5px;
+            &::before {
+                content: " ";
+                display: absolute;
+                top: 10;
+                font-size: 0px;
+                width: 0;
+                height: 0;
+                border-top: $diagonal-size solid green;
+                border-right: $diagonal-size solid transparent;
+                border-bottom: $diagonal-size solid transparent;
+                border-left: $diagonal-size solid green;
+            }
+            &:nth-child(1) { background-color: $mrfp-yellow; }
+            &:nth-child(2) { background-color: $mrfp-timeline-1; }
+            &:nth-child(3) { background-color: $mrfp-timeline-2; }
+            &:nth-child(4) { background-color: $mrfp-timeline-3; }
+            &:nth-child(5) { background-color: $mrfp-timeline-4; }
+            &:nth-child(1)::before { border-left: $diagonal-size solid $mrfp-l-yellow; border-top: $diagonal-size solid $mrfp-l-yellow }
+            &:nth-child(2)::before { border-left: $diagonal-size solid $mrfp-yellow; border-top: $diagonal-size solid $mrfp-yellow }
+            &:nth-child(3)::before { border-left: $diagonal-size solid $mrfp-timeline-1; border-top: $diagonal-size solid $mrfp-timeline-1 }
+            &:nth-child(4)::before { border-left: $diagonal-size solid $mrfp-timeline-2; border-top: $diagonal-size solid $mrfp-timeline-2 }
+            &:nth-child(5)::before { border-left: $diagonal-size solid $mrfp-timeline-3; border-top: $diagonal-size solid $mrfp-timeline-3 }
         }
     }
 }
