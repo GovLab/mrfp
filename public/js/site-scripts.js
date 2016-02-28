@@ -1,13 +1,5 @@
-// console.log('trying jsonp');
-// $.ajax({
-//     type: "GET",
-//     url: 'http://mrfpinc.org/feed/?_jsonp=?',
-//     dataType: 'jsonp',
-// }).success( function(response){
-//     console.log(JSON.stringify(response));
-// });
-
 $(function() {
+    var mobileOnly = '(max-width: 767px)';
 
     $( '.m-collapsible' ).append( '<a class="b-button m-more"></a>' );
 
@@ -16,4 +8,18 @@ $(function() {
         $(this).parent().toggleClass('m-collapsed');
     });
 
+
+    function fixEqualizer () {
+        if (window.matchMedia(mobileOnly).matches) {
+            console.log('Matching Mobile JS');
+            $( '.fix-equalizer' ).addClass('_fix-eq-mq');
+        } else {
+            console.log('Matching Desktop JS');
+            $( '.fix-equalizer' ).removeClass('_fix-eq-mq');
+        }
+    }
+
+    $( window ).resize(function() {
+        fixEqualizer();
+    });
 });
