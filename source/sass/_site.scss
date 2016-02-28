@@ -10,6 +10,9 @@ $mrfp-l-orange: #FFF1ED;
 $mrfp-purple: #AD6DC4;
 $mrfp-l-purple: #F6EFF9;
 
+$mrfp-d-blue: #303f50;
+$mrfp-d-blue-2: #222c38;
+
 $mrfp-l-orange-shade-1: #ffd6cc;
 
 $mrfp-orange-accent: #ffad66;
@@ -113,11 +116,6 @@ $mrfp-timeline-4: $gray-40;
     }
 }
 
-.b-slide {
-   &.m-blue { background-color: $mrfp-blue; }
-   &.m-orange { background-color: $mrfp-orange; }
-   &.m-purple { background-color: $mrfp-purple; }
-}
 
 .b-divider {
     &.m-centered {
@@ -551,12 +549,20 @@ $sm-mobile-only: max-width 600px;
 
 #wp-slider {
     .b-slide {
+        &.m-blue { background-color: $mrfp-blue; }
+        &.m-d-blue { background-color: $mrfp-d-blue; }
+        &.m-orange { background-color: $mrfp-orange; }
+        &.m-purple { background-color: $mrfp-purple; }
         @include breakpoint(0px 550px) { min-height: 480px; }
         @include breakpoint(550px 640px) { min-height: 440px; }
         @include breakpoint(640px 800px) { min-height: 400px; }
         @include breakpoint(800px 1000px) { min-height: 380px; }
         @include breakpoint(1000px) { min-height: 320px; }
     }
+}
+
+.b-copyright {
+    background-color: $mrfp-d-blue-2;
 }
 
 #overlay {
