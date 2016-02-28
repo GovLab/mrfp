@@ -6983,15 +6983,6 @@ code.m-negative {
   padding-top: 10vh;
   min-height: 100vh; }
 
-.b-slide.m-blue {
-  background-color: #3B4E64; }
-
-.b-slide.m-orange {
-  background-color: #F16246; }
-
-.b-slide.m-purple {
-  background-color: #AD6DC4; }
-
 .b-divider.m-centered {
   text-align: center; }
 
@@ -7349,6 +7340,14 @@ time {
 
 #wp-slider .b-slide {
   min-height: 480px; }
+  #wp-slider .b-slide.m-blue {
+    background-color: #3B4E64; }
+  #wp-slider .b-slide.m-d-blue {
+    background-color: #303f50; }
+  #wp-slider .b-slide.m-orange {
+    background-color: #F16246; }
+  #wp-slider .b-slide.m-purple {
+    background-color: #AD6DC4; }
   @media screen and (min-width: 34.375em) {
     #wp-slider .b-slide {
       min-height: 440px; } }
@@ -7361,6 +7360,9 @@ time {
   @media screen and (min-width: 62.5em) {
     #wp-slider .b-slide {
       min-height: 320px; } }
+
+.b-copyright {
+  background-color: #222c38; }
 
 #overlay {
   background-color: transparent; }
