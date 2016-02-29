@@ -548,21 +548,77 @@ $sm-mobile-only: max-width 600px;
 }
 
 #wp-slider {
+    background-color: $mrfp-d-blue;
     .b-slide {
+
         &.m-blue { background-color: $mrfp-blue; }
         &.m-d-blue { background-color: $mrfp-d-blue; }
         &.m-orange { background-color: $mrfp-orange; }
         &.m-purple { background-color: $mrfp-purple; }
-        @include breakpoint(0px 550px) { min-height: 480px; }
-        @include breakpoint(550px 640px) { min-height: 440px; }
-        @include breakpoint(640px 800px) { min-height: 400px; }
-        @include breakpoint(800px 1000px) { min-height: 380px; }
-        @include breakpoint(1000px) { min-height: 320px; }
+        @include breakpoint(0px 550px) {
+            min-height: 480px;
+            padding: 20px 0;
+        }
+        @include breakpoint(550px 640px) {
+            min-height: 440px;
+            padding: 20px 0;
+        }
+        @include breakpoint(640px 800px) {
+            min-height: 400px;
+            padding: 20px 30px;
+        }
+        @include breakpoint(800px 1000px) {
+            min-height: 380px;
+            padding: 20px 40px;
+        }
+        @include breakpoint(1000px) {
+            min-height: 320px;
+            padding: 20px 80px;
+        }
+
+    }
+}
+
+.slick {
+    @include breakpoint(0px 640px) {
+        .slick-arrow {
+            visibility: hidden;
+        }
+    }
+    @include breakpoint(640px) {
+        .slick-arrow {
+            visibility: visible;
+        }
     }
 }
 
 .b-copyright {
     background-color: $mrfp-d-blue-2;
+    padding: 60px 0;
+    & .columns > * {
+        display: table;
+        margin: 0 auto;
+    }
+    .e-cc-badge {
+        float: unset;
+        margin-bottom: 20px;
+    }
+    .e-title {
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+}
+
+.b-main-menu {
+    a {
+        abbr {
+            color: $white-70;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 #overlay {
