@@ -6921,6 +6921,9 @@ code.m-negative {
     .b-top-nav .e-logo {
       display: block; } }
 
+.b-top-nav .e-nav-trigger i {
+  cursor: pointer; }
+
 .b-top-section a.m-no-decoration:hover {
   text-decoration: none; }
 
