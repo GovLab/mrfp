@@ -46,6 +46,11 @@ $mrfp-timeline-4: $gray-40;
         @include breakpoint($desktop) { display: block; }
         @include breakpoint($mobile-only) { display: none; }
     }
+    .e-nav-trigger {
+        i {
+            cursor: pointer;
+        }
+    }
 }
 
 .b-top-section {
