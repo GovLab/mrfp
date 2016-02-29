@@ -7338,31 +7338,62 @@ time {
 ._fix-eq-mq {
   height: unset !important; }
 
-#wp-slider .b-slide {
-  min-height: 480px; }
-  #wp-slider .b-slide.m-blue {
-    background-color: #3B4E64; }
-  #wp-slider .b-slide.m-d-blue {
-    background-color: #303f50; }
-  #wp-slider .b-slide.m-orange {
-    background-color: #F16246; }
-  #wp-slider .b-slide.m-purple {
-    background-color: #AD6DC4; }
-  @media screen and (min-width: 34.375em) {
-    #wp-slider .b-slide {
-      min-height: 440px; } }
-  @media screen and (min-width: 40em) {
-    #wp-slider .b-slide {
-      min-height: 400px; } }
-  @media screen and (min-width: 50em) {
-    #wp-slider .b-slide {
-      min-height: 380px; } }
-  @media screen and (min-width: 62.5em) {
-    #wp-slider .b-slide {
-      min-height: 320px; } }
+#wp-slider {
+  background-color: #303f50; }
+  #wp-slider .b-slide {
+    min-height: 480px;
+    padding: 20px 0; }
+    #wp-slider .b-slide.m-blue {
+      background-color: #3B4E64; }
+    #wp-slider .b-slide.m-d-blue {
+      background-color: #303f50; }
+    #wp-slider .b-slide.m-orange {
+      background-color: #F16246; }
+    #wp-slider .b-slide.m-purple {
+      background-color: #AD6DC4; }
+    @media screen and (min-width: 34.375em) {
+      #wp-slider .b-slide {
+        min-height: 440px;
+        padding: 20px 0; } }
+    @media screen and (min-width: 40em) {
+      #wp-slider .b-slide {
+        min-height: 400px;
+        padding: 20px 30px; } }
+    @media screen and (min-width: 50em) {
+      #wp-slider .b-slide {
+        min-height: 380px;
+        padding: 20px 40px; } }
+    @media screen and (min-width: 62.5em) {
+      #wp-slider .b-slide {
+        min-height: 320px;
+        padding: 20px 80px; } }
+
+.slick .slick-arrow {
+  visibility: hidden; }
+
+@media screen and (min-width: 40em) {
+  .slick .slick-arrow {
+    visibility: visible; } }
 
 .b-copyright {
-  background-color: #222c38; }
+  background-color: #222c38;
+  padding: 60px 0; }
+  .b-copyright .columns > * {
+    display: table;
+    margin: 0 auto; }
+  .b-copyright .e-cc-badge {
+    float: unset;
+    margin-bottom: 20px; }
+  .b-copyright .e-title {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px; }
+
+.b-main-menu a abbr {
+  color: rgba(255, 255, 255, 0.7); }
+
+.b-main-menu a:hover {
+  text-decoration: none; }
 
 #overlay {
   background-color: transparent; }

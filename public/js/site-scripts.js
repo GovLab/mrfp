@@ -22,4 +22,12 @@ $(function() {
     $( window ).resize(function() {
         fixEqualizer();
     });
+
+    // on mobile, anchor to section content when using menu
+    if (window.matchMedia(mobileOnly).matches) {
+        $( '.js-mobile-anchor' ).each(function() {
+            var h = $( this ).attr('href');
+            $( this ).attr('href', h + '#content');
+        });
+    }
 });

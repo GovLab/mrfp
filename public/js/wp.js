@@ -2,12 +2,9 @@ $(function() {
     // pull posts from wordpress.com api
     $.ajax({
         type: "GET",
-        url: 'https://public-api.wordpress.com/rest/v1.1/sites/mrfpblog.wordpress.com/posts/?number=2',
+        url: 'https://public-api.wordpress.com/rest/v1.1/sites/mrfpblog.wordpress.com/posts/?number=3',
         dataType: 'json',
     }).success( function(response){
-        // console.log(JSON.stringify(response));
-        // r = JSON.parse(response);
-        // r = JSON.stringify(response);
         r = response;
         console.log(r);
 
