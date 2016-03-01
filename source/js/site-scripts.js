@@ -4,7 +4,6 @@ $(function() {
     $( '.m-collapsible' ).append( '<a class="b-button m-more"></a>' );
 
     $( '.m-more' ).click(function () {
-        console.log('collapse clicked');
         $(this).parent().toggleClass('m-collapsed');
     });
 
@@ -13,18 +12,14 @@ $(function() {
         if (window.matchMedia(mobileOnly).matches) {
             console.log('Matching Mobile JS');
             $( '.fix-equalizer' ).addClass('_fix-eq-mq');
-            $( '.fix-equalizer' ).append('<b>' + $( window ).width() + '</b><br />');
-            $( '.fix-equalizer' ).append('<b>' + window.innerWidth + '</b><br />');
-            $( '.fix-equalizer' ).append('<b>' + window.matchMedia(mobileOnly).matches + '</b><br />');
         } else {
             console.log('Matching Desktop JS');
             $( '.fix-equalizer' ).removeClass('_fix-eq-mq');
-            $( '.fix-equalizer' ).append('<b>' + $( window ).width() + '</b><br />');
-            $( '.fix-equalizer' ).append('<b>' + window.innerWidth + '</b><br />');
-            $( '.fix-equalizer' ).append('<b>' + window.matchMedia(mobileOnly).matches + '</b><br />');
         }
     }
 
+    // don't use resize, because it gets super weird in mobile and keeps popping the event for some reason
+    // shouldn't be necessary
     // $( window ).resize(function() {
     //     fixEqualizer();
     // });
