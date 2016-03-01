@@ -549,6 +549,7 @@ $sm-mobile-only: max-width 600px;
 }
 
 ._fix-eq-mq {
+    border: solid 4px red;
     height: unset !important;
 }
 

@@ -13,9 +13,15 @@ $(function() {
         if (window.matchMedia(mobileOnly).matches) {
             console.log('Matching Mobile JS');
             $( '.fix-equalizer' ).addClass('_fix-eq-mq');
+            $( '.fix-equalizer' ).append('<b>' + $( window ).width() + '</b><br />');
+            $( '.fix-equalizer' ).append('<b>' + window.innerWidth + '</b><br />');
+            $( '.fix-equalizer' ).append('<b>' + window.matchMedia(mobileOnly).matches + '</b><br />');
         } else {
             console.log('Matching Desktop JS');
             $( '.fix-equalizer' ).removeClass('_fix-eq-mq');
+            $( '.fix-equalizer' ).append('<b>' + $( window ).width() + '</b><br />');
+            $( '.fix-equalizer' ).append('<b>' + window.innerWidth + '</b><br />');
+            $( '.fix-equalizer' ).append('<b>' + window.matchMedia(mobileOnly).matches + '</b><br />');
         }
     }
 
