@@ -7340,7 +7340,7 @@ time {
 
 ._fix-eq-mq {
   border: solid 4px red;
-  height: unset !important; }
+  height: 150px !important; }
 
 #wp-slider {
   background-color: #303f50; }
