@@ -6,13 +6,11 @@ $(function() {
         dataType: 'json',
     }).success( function(response){
         r = response;
-        console.log(r);
 
         var slide = $( '.js-wp-slide' ).clone();
         $( '.js-template' ).remove();
 
         for (var post in r.posts) {
-            console.log(r.posts[post]);
             var date = new Date(r.posts[post].date);
             $( slide ).find('.e-project-name').text( r.posts[post].title );
             $( slide ).find('.e-question').text( date.toDateString() );

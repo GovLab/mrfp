@@ -48,17 +48,19 @@
 </div>
 <div class="b-slider slick" id="wp-slider">
 </div>
-<a name="contact"></a>
-<div class="b-divider m-purple"><h1>Contact</h1></div>
+<div class="b-divider m-purple">
+    <a name="contact"></a>
+    <h1>Contact</h1>
+</div>
 <div class="b-page-section m-purple m-contact-section">
     <div class="row">
         <div class="large-10 large-offset-1 columns end">
             <form action="//formspree.io/info@mrfpinc.org" method="POST" class="b-form">
                 <div class="row">
                     <div class="large-6 columns">
-                        <input type="text" id="name" placeholder="Name"/>
-                        <input type="email" id="mail" placeholder="Email"/>
-                        <textarea id="msg" placeholder="Message" rows="4"></textarea>
+                        <input type="text" id="name" placeholder="Name" name="name"/>
+                        <input type="email" id="mail" placeholder="Email" name="email"/>
+                        <textarea id="msg" placeholder="Message" rows="4" name="msg" required></textarea>
                         <div class="e-checkbox">
                             <input type="checkbox" id="checkbox-2"><label for="checkbox-2">Send me updates about MRFP</label>
                         </div>
