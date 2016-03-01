@@ -625,6 +625,9 @@ $sm-mobile-only: max-width 600px;
             text-decoration: none;
         }
     }
+    &:not(.m-active) {
+        box-shadow: none;
+    }
 }
 
 #overlay {
