@@ -22,6 +22,7 @@ $(function() {
     $( window ).resize(function() {
         fixEqualizer();
     });
+    fixEqualizer();
 
     // on mobile, anchor to section content when using menu
     if (window.matchMedia(mobileOnly).matches) {
