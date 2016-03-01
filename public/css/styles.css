@@ -7339,7 +7339,6 @@ time {
     transition: all .4s ease; }
 
 ._fix-eq-mq {
-  border: solid 4px green;
   height: 150px !important; }
 
 #wp-slider {

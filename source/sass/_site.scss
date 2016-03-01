@@ -549,7 +549,6 @@ $sm-mobile-only: max-width 600px;
 }
 
 ._fix-eq-mq {
-    border: solid 4px green;
     // height: unset !important; // for some reason this may not work on mobile clients :/
     height: 150px !important;
 }
