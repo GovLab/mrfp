@@ -7398,5 +7398,8 @@ time {
 .b-main-menu a:hover {
   text-decoration: none; }
 
+.b-main-menu:not(.m-active) {
+  box-shadow: none; }
+
 #overlay {
   background-color: transparent; }
