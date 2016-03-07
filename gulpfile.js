@@ -54,8 +54,6 @@ gulp.task('nunjucks', function() {
     path: 'source/templates',
     ext: '.html'
   };
-  // nunjucksRender.nunjucks.configure(['source/templates/']);
-
   return gulp.src('source/templates/**/*.+(html|nunjucks)')
   .pipe(plumber())
   // Adding data to Nunjucks
@@ -69,15 +67,23 @@ gulp.task('nunjucks', function() {
   }))
 });
 
+gulp.task('favicon', function() {
+  return gulp.src('source/templates/favicon*')
+  .pipe(plumber())
+  .pipe(gulp.dest('public'))
+  .pipe(browserSync.stream());
+});
+
 gulp.task('deploy', ['sass', 'nunjucks', 'js', 'img'], shell.task([
   'git subtree push --prefix public origin gh-pages'
   ])
 );
 
-gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img', 'files'], function (){
+gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img', 'files', 'favicon'], function (){
   gulp.watch('source/sass/**/*.scss', ['sass']);
   gulp.watch('source/templates/**/*.html', ['nunjucks']);
   gulp.watch('source/img/**/*', ['img']);
   gulp.watch('source/js/**/*', ['js']);
   gulp.watch('source/files/**/*', ['files']);
+  gulp.watch('source/templates/favicon*', ['favicon']);
 });
