@@ -33,6 +33,13 @@ gulp.task('img', function() {
   .pipe(browserSync.stream());
 });
 
+gulp.task('files', function() {
+  return gulp.src('source/files/**/*')
+  .pipe(plumber())
+  .pipe(gulp.dest('public/files'))
+  .pipe(browserSync.stream());
+});
+
 gulp.task('js', function() {
   return gulp.src(['node_modules/govlab-styleguide/js/**/*', 'source/js/**/*'])
   .pipe(plumber())
@@ -67,9 +74,10 @@ gulp.task('deploy', ['sass', 'nunjucks', 'js', 'img'], shell.task([
   ])
 );
 
-gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img'], function (){
+gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img', 'files'], function (){
   gulp.watch('source/sass/**/*.scss', ['sass']);
   gulp.watch('source/templates/**/*.html', ['nunjucks']);
   gulp.watch('source/img/**/*', ['img']);
   gulp.watch('source/js/**/*', ['js']);
+  gulp.watch('source/files/**/*', ['files']);
 });
