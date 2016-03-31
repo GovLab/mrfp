@@ -19,6 +19,8 @@ $mrfp-orange-accent: #ffad66;
 
 $mrfp-yellow-accent: #ffd500;
 
+$mrfp-blue-accent: #8caeeb;
+
 // $mrfp-timeline-0: #e0e0e0;
 // $mrfp-timeline-1: #d9d9d9;
 // $mrfp-timeline-2: #cccccc;
@@ -102,6 +104,18 @@ $mrfp-timeline-4: $gray-40;
     }
     &.m-extra-padding {
         padding: 80px 0;
+        & > .row:not(:last-child) {
+            margin-bottom: 90px;
+        }
+        & > .row.m-sm-bot {
+            margin-bottom: 10px;
+        }
+        & > .row.m-sm-bot-2 {
+            margin-bottom: 20px;
+        }
+    }
+    &.m-extra-padding-bot {
+        padding: 0 0 80px 0;
         & > .row:not(:last-child) {
             margin-bottom: 90px;
         }
@@ -408,6 +422,13 @@ $sm-mobile-only: max-width 600px;
             background-color: $mrfp-yellow-accent
         }
     }
+    &.m-blue {
+        .e-event {
+            &.m-current {
+                background-color: $mrfp-blue-accent
+            }
+        }
+    }
 }
 
 .b-timeline {
@@ -435,7 +456,13 @@ $sm-mobile-only: max-width 600px;
         time {
             display: block;
         }
-
+    }
+    &.m-blue {
+        .e-event {
+            &.m-current {
+                border-left: solid 2px $mrfp-blue-accent;
+            }
+        }
     }
     .e-timeline-graphic {
         overflow: hidden;
@@ -487,6 +514,24 @@ $sm-mobile-only: max-width 600px;
                 & + .e-timebox::after {
                     border-left: $diagonal-size solid $mrfp-yellow-accent;
                     border-top: $diagonal-size solid $mrfp-yellow-accent;
+                }
+            }
+        }
+    }
+    &.m-blue {
+        .e-timeline-graphic {
+            .e-timebox {
+                &::before {
+                    border-top: $diagonal-size + 2 solid $mrfp-ex-l-blue;
+                    border-left: $diagonal-size + 2 solid $mrfp-ex-l-blue;
+                }
+                &:nth-child(1)::after { border-left: $diagonal-size solid $mrfp-ex-l-blue; border-top: $diagonal-size solid $mrfp-ex-l-blue; }
+                &.m-current {
+                    background-color: $mrfp-blue-accent;
+                    & + .e-timebox::after {
+                        border-left: $diagonal-size solid $mrfp-blue-accent;
+                        border-top: $diagonal-size solid $mrfp-blue-accent;
+                    }
                 }
             }
         }
