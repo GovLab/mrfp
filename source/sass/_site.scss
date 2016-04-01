@@ -675,6 +675,40 @@ $sm-mobile-only: max-width 600px;
     }
 }
 
+.b-question-answer {
+    dt {
+        font-size: 20px;
+        margin-bottom: 40px;
+        font-weight: 400;
+        cursor: pointer;
+        &::after {
+            font-family: Material Icons;
+            margin-left: 0.2em;
+            font-size: 26px;
+            line-height: 0.5;
+            color: $gray-10;
+            content: 'textsms';
+            @include transition;
+        }
+        &:hover::after {
+            color: $gray-50;
+            @include transition;
+        }
+        &.m-active::after {
+            color: $gray-30;
+        }
+    }
+    dd {
+        display: none;
+        margin-bottom: 40px;
+        font-size: 18px;
+        font-weight: 700;
+        &.m-active {
+            display: block;
+        }
+    }
+}
+
 #overlay {
     background-color: transparent;
 }

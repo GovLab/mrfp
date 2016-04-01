@@ -32,4 +32,65 @@ $(function() {
             $( this ).attr('href', h + '#content');
         });
     }
+
+    // show/hide functionality for q&a section
+
+    // toggle visibility on scroll to each element
+
+    var scrollPoints, wy, wh;
+
+    function showNode($elem) {
+        $elem.addClass('m-active');
+        $elem.next('dd').addClass('m-active');
+    }
+
+    function hideNode($elem) {
+        $elem.removeClass('m-active');
+        $elem.next('dd').removeClass('m-active');
+    }
+
+    function toggleNode($elem) {
+        $elem.toggleClass('m-active');
+        $elem.next('dd').toggleClass('m-active');
+    }
+
+    function getScrollPoints() {
+        scrollPoints = {};
+        $('#rfi-qa dt').each(function (e) {
+            var y = $(this).offset().top;
+            var y2 = y+$(this).height()+$(this).next('dd').height();
+            var $this = $(this);
+            scrollPoints[y] = { elem : $this , end : y2 };
+        });
+    }
+
+    getScrollPoints();
+
+    $(window).scroll(function (e) {
+        wy = window.scrollY;
+        wh = $(window).height();
+        offsetScroll = wh*0.5; // offset scroll trigger position
+        var t = 0;
+        for (var i in scrollPoints) {
+            t++;
+            if (wy+offsetScroll >= i && wy+offsetScroll < scrollPoints[i].end) {
+                getScrollPoints();
+                showNode(scrollPoints[i].elem);
+                hideNode($('dt').not(scrollPoints[i].elem));
+                return;
+            }
+        }
+        console.log (t);
+    });
+
+    // toggle visibility on click
+
+    $('#rfi-qa dt').click(function (e) {
+        toggleNode($(this));
+
+        // redo scrollpoints
+        getScrollPoints();
+    });
+
+
 });
