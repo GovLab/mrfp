@@ -4,18 +4,16 @@ sass            = require('gulp-sass'),
 shell           = require('gulp-shell'),
 data            = require('gulp-data'),
 nunjucksRender  = require('gulp-nunjucks-render'),
-browserSync     = require('browser-sync'),
+browserSync     = require('browser-sync').create(),
 file            = require('gulp-file'),
 plumber         = require('gulp-plumber'),
 packagejson     = require('./package.json');
 
 gulp.task('browserSync', function() {
-  browserSync({
-    server: {
-      baseDir: 'public' // This is the DIST folder browsersync will serve
-    },
+  browserSync.init({
+    server: 'public',
     open: false
-  })
+  });
 })
 
 gulp.task('sass', function() {
@@ -80,6 +78,7 @@ gulp.task('deploy', ['sass', 'nunjucks', 'js', 'img'], shell.task([
 );
 
 gulp.task('default', ['browserSync', 'sass', 'nunjucks', 'js', 'img', 'files', 'favicon'], function (){
+  // browserSync.pause();
   gulp.watch('source/sass/**/*.scss', ['sass']);
   gulp.watch('source/templates/**/*.html', ['nunjucks']);
   gulp.watch('source/img/**/*', ['img']);
