@@ -7425,5 +7425,32 @@ time {
 .b-main-menu:not(.m-active) {
   box-shadow: none; }
 
+.b-question-answer dt {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  cursor: pointer; }
+  .b-question-answer dt::after {
+    font-family: Material Icons;
+    margin-left: 0.2em;
+    font-size: 26px;
+    line-height: 0.5;
+    color: rgba(0, 0, 0, 0.1);
+    content: 'textsms';
+    transition: all .4s ease; }
+  .b-question-answer dt:hover::after {
+    color: rgba(0, 0, 0, 0.5);
+    transition: all .4s ease; }
+  .b-question-answer dt.m-active::after {
+    color: rgba(0, 0, 0, 0.3); }
+
+.b-question-answer dd {
+  display: none;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 700; }
+  .b-question-answer dd.m-active {
+    display: block; }
+
 #overlay {
   background-color: transparent; }
