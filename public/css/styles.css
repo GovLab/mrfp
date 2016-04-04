@@ -7434,7 +7434,7 @@ time {
   cursor: pointer; }
   .b-question-answer dt::after {
     font-family: Material Icons;
-    margin-left: 0.2m;
+    margin-left: 0.2em;
     font-size: 26px;
     line-height: 0.5;
     color: rgba(0, 0, 0, 0.1);
