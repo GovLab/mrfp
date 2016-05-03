@@ -732,3 +732,14 @@ $sm-mobile-only: max-width 600px;
 #overlay {
     background-color: transparent;
 }
+
+
+.e-card {
+    a {
+        margin-left: 14px;
+    }
+    .e-card-inner {
+        height: 195px;
+    }
+        
+}
