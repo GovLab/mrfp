@@ -1,16 +1,18 @@
 $(document).ready(function() {
 
   var currentTime,currentEvents,latestEventDate,date, dateInMs, latestEventDateMs;
-// var currentTime = new Date("April 1, 2016").getTime();
 
+// CREATE TIMELINE EVENT OBJECTS THAT HOLD INDEX RELATIVE TO PARENT
   function TimelineEvent (timeElement,elementIndex) {
-    this.timeElement = timeElement,
-    this.elementIndex = elementIndex
+    this.timeElement = timeElement;
+    this.elementIndex = elementIndex;
   }
 
+
+  // FIND THE LATEST EVENT AND RETURN THE FIRST MATCH
   function getCurrentEvent() {
-    // currentTime = Date.now();
-    currentTime = new Date("March 16, 2016").getTime();
+    currentTime = Date.now();
+    // currentTime = new Date("April 1, 2016").getTime();
     currentEvents = [];
     $(".e-event time").map(function(idx,val){
       date = ($(this).attr('datetime'));
@@ -22,13 +24,14 @@ $(document).ready(function() {
     return currentEvents[0];
   }
 
-
-  function updateTimelineGraphic(event) {
-    $('.e-timeline-graphic').children().eq(event.elementIndex).addClass("m-current");
+// UPDATE TIMELINE GRAPHIC USING TIMELINE EVENT INDEX
+  function updateTimelineGraphic(currentEvent) {
+    $('.e-timeline-graphic').children().eq(currentEvent.elementIndex).addClass("m-current");
   }
 
-  function updateTimelineSections(event) {
-    latestEventDate = $(event.timeElement).attr('datetime');
+// UPDATE TIMELINE SECTION IN LIST AND COLUMN VIEW
+  function updateTimelineSections(currentEvent) {
+    latestEventDate = $(currentEvent.timeElement).attr('datetime');
     $(".e-event time").map(function(idx,val){
       date = ($(this).attr('datetime'));
       dateInMs = new Date(date).getTime();
