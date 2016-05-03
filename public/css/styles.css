@@ -7675,8 +7675,9 @@ time {
 #overlay {
   background-color: transparent; }
 
-.e-card a {
-  margin-left: 14px; }
-
-.e-card .e-card-inner {
-  height: 195px; }
+.e-card {
+  display: block; }
+  .e-card a {
+    margin-left: 33px; }
+  .e-card .e-card-inner {
+    height: 195px; }

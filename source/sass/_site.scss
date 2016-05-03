@@ -736,10 +736,11 @@ $sm-mobile-only: max-width 600px;
 
 .e-card {
     a {
-        margin-left: 14px;
+        margin-left: 33px;
     }
     .e-card-inner {
         height: 195px;
     }
+    display: block;
         
 }
