@@ -7674,3 +7674,8 @@ time {
 
 #overlay {
   background-color: transparent; }
+
+.e-card {
+  padding: 0; }
+  .e-card a {
+    margin-left: 14px; }
