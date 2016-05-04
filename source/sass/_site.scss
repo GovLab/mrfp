@@ -734,13 +734,37 @@ $sm-mobile-only: max-width 600px;
 }
 
 
+    p.e-card-description {
+
+    }
+
 .e-card {
-    a {
-        margin-left: 33px;
-    }
+    position: relative;
     .e-card-inner {
-        height: 195px;
+        position: relative;
+        height: 80px;
+        width: 640px;
+        margin: 0;
+        p {
+            margin-top: 5px;
+            vertical-align: center;
+        }
     }
-    display: block;
+
+    .e-card-name {
+        display: inline;
+        position: absolute;
+        left:0;
+    }
+
+    .e-card-description {
+        right: 0px;
+        position: absolute;
+        margin: 0;
+        .b-button {
+            display: inline;
+        }
+    }
+
         
 }
