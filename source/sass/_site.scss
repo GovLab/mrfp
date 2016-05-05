@@ -740,7 +740,7 @@ $sm-mobile-only: max-width 600px;
             opacity: .8;
             position: relative;
             height: 80px;
-            width: 40rem;
+            width: 680px;
                 @media (max-width: 480px){
                         height: 10rem;
                         width: 20rem;
@@ -759,6 +759,9 @@ $sm-mobile-only: max-width 600px;
 
         .e-card-description {
             right: 0px;
+            @media (max-width: 480px) {
+                left:0px;
+            }
             position: absolute;
             margin: 0;
             .b-button {

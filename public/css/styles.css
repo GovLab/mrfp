@@ -7681,7 +7681,7 @@ time {
     opacity: .8;
     position: relative;
     height: 80px;
-    width: 40rem;
+    width: 680px;
     margin: 0; }
     @media (max-width: 480px) {
       .e-card .e-card-inner {
@@ -7698,5 +7698,8 @@ time {
       right: 0px;
       position: absolute;
       margin: 0; }
+      @media (max-width: 480px) {
+        .e-card .e-card-inner .e-card-description {
+          left: 0px; } }
       .e-card .e-card-inner .e-card-description .b-button, .e-card .e-card-inner .e-card-description .b-form input[type="submit"], .b-form .e-card .e-card-inner .e-card-description input[type="submit"] {
         display: inline; }
