@@ -734,37 +734,41 @@ $sm-mobile-only: max-width 600px;
 }
 
 
-    p.e-card-description {
-
-    }
-
 .e-card {
     position: relative;
-    .e-card-inner {
-        position: relative;
-        height: 80px;
-        width: 640px;
-        margin: 0;
-        p {
-            margin-top: 5px;
-            vertical-align: center;
-        }
-    }
+        .e-card-inner {
+            opacity: .8;
+            position: relative;
+            height: 80px;
+            width: 40rem;
+                @media (max-width: 480px){
+                        height: 10rem;
+                        width: 20rem;
+                    }
+            margin: 0;
+            p {
+                margin-top: 5px;
+                vertical-align: center;
+            }
 
-    .e-card-name {
-        display: inline;
-        position: absolute;
-        left:0;
-    }
-
-    .e-card-description {
-        right: 0px;
-        position: absolute;
-        margin: 0;
-        .b-button {
+        .e-card-name {
             display: inline;
+            position: absolute;
+            left:0;
         }
+
+        .e-card-description {
+            right: 0px;
+            position: absolute;
+            margin: 0;
+            .b-button {
+                display: inline;
+            }
+ 
+        }
+
     }
 
         
 }
+
