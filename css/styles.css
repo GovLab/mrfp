@@ -7678,20 +7678,25 @@ time {
 .e-card {
   position: relative; }
   .e-card .e-card-inner {
+    opacity: .8;
     position: relative;
     height: 80px;
-    width: 640px;
+    width: 40rem;
     margin: 0; }
+    @media (max-width: 480px) {
+      .e-card .e-card-inner {
+        height: 10rem;
+        width: 20rem; } }
     .e-card .e-card-inner p {
       margin-top: 5px;
       vertical-align: center; }
-  .e-card .e-card-name {
-    display: inline;
-    position: absolute;
-    left: 0; }
-  .e-card .e-card-description {
-    right: 0px;
-    position: absolute;
-    margin: 0; }
-    .e-card .e-card-description .b-button, .e-card .e-card-description .b-form input[type="submit"], .b-form .e-card .e-card-description input[type="submit"] {
-      display: inline; }
+    .e-card .e-card-inner .e-card-name {
+      display: inline;
+      position: absolute;
+      left: 0; }
+    .e-card .e-card-inner .e-card-description {
+      right: 0px;
+      position: absolute;
+      margin: 0; }
+      .e-card .e-card-inner .e-card-description .b-button, .e-card .e-card-inner .e-card-description .b-form input[type="submit"], .b-form .e-card .e-card-inner .e-card-description input[type="submit"] {
+        display: inline; }
