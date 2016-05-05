@@ -7676,8 +7676,27 @@ time {
   background-color: transparent; }
 
 .e-card {
-  display: block; }
-  .e-card a {
-    margin-left: 33px; }
+  position: relative; }
   .e-card .e-card-inner {
-    height: 195px; }
+    opacity: .8;
+    position: relative;
+    height: 80px;
+    width: 40rem;
+    margin: 0; }
+    @media (max-width: 480px) {
+      .e-card .e-card-inner {
+        height: 10rem;
+        width: 20rem; } }
+    .e-card .e-card-inner p {
+      margin-top: 5px;
+      vertical-align: center; }
+    .e-card .e-card-inner .e-card-name {
+      display: inline;
+      position: absolute;
+      left: 0; }
+    .e-card .e-card-inner .e-card-description {
+      right: 0px;
+      position: absolute;
+      margin: 0; }
+      .e-card .e-card-inner .e-card-description .b-button, .e-card .e-card-inner .e-card-description .b-form input[type="submit"], .b-form .e-card .e-card-inner .e-card-description input[type="submit"] {
+        display: inline; }
