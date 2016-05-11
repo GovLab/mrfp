@@ -737,10 +737,10 @@ $sm-mobile-only: max-width 600px;
 .e-card {
     position: relative;
         .e-card-inner {
-            opacity: .8;
+            background-color: $mrfp-yellow-shade;
             position: relative;
             height: 80px;
-            width: 40rem;
+            width: 680px;
                 @media (max-width: 480px){
                         height: 10rem;
                         width: 20rem;
@@ -755,10 +755,14 @@ $sm-mobile-only: max-width 600px;
             display: inline;
             position: absolute;
             left:0;
+            color: darken($mrfp-yellow, 7%);
         }
 
         .e-card-description {
             right: 0px;
+            @media (max-width: 480px) {
+                left:0px;
+            }
             position: absolute;
             margin: 0;
             .b-button {
@@ -770,5 +774,10 @@ $sm-mobile-only: max-width 600px;
     }
 
         
+}
+
+.linebreak {
+    @include breakpoint($desktop) { display: inline; }
+    @include breakpoint($mobile-only) { display: none; }
 }
 
